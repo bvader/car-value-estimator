@@ -22,31 +22,32 @@ public class MarketEstimate {
         {
             case "Toyota":
                 basePrice = 25000;
-                System.out.println("one");
+                System.out.println("Toyota");
                 break;
             case "Lexus":
                 basePrice = 35000;
-                System.out.println("two");
+                System.out.println("Lexus");
                 break;
             case "Ford":
                 basePrice = 20000;
-                System.out.println("three");
+                System.out.println("Ford");
                 break;
             case "Nissan":
                 basePrice = 20000;
+                System.out.println("Nissan");
                 break;
             case "Tesla":
                 basePrice = 60000;
-                System.out.println("three");
+                System.out.println("Tesla");
                 break;
             case "Ferrari":
                 basePrice = 250000;
                 calculateExoticPrice();
-                System.out.println("three");
+                System.out.println("Ferrari");
                 break;
             default:
                 basePrice = 30000;
-                System.out.println("no match");
+                System.out.println("Other");
         }
 
         int est = (int) ((((Math.random()) - .5) / 10 + 1) * basePrice);
