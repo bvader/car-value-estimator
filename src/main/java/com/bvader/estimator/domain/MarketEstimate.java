@@ -34,20 +34,34 @@ public class MarketEstimate {
                 break;
             case "Nissan":
                 basePrice = 20000;
+                break;
             case "Tesla":
                 basePrice = 60000;
                 System.out.println("three");
+                break;
             case "Ferrari":
                 basePrice = 250000;
+                calculateExoticPrice();
                 System.out.println("three");
+                break;
             default:
                 basePrice = 30000;
                 System.out.println("no match");
         }
 
-        int est = (int) (Math.random() * 30000);
+        int est = (int) ((((Math.random()) - .5) / 10 + 1) * basePrice);
         setEstimate(est);
     }
+
+    private void calculateExoticPrice() {
+        // Hmmm lets think about this for a while
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public int getEstimate() {
         return estimate;
@@ -80,5 +94,5 @@ public class MarketEstimate {
     public void setYear(int year) {
         this.year = year;
     }
-    
+
 }
