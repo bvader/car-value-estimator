@@ -1,0 +1,11 @@
+---
+applications:
+- name: car-value-estimator
+  memory: 1G
+  path: ./target/car-value-estimator-service-0.1.0.jar
+  buildpacks:
+    - https://github.com/bvader/java-buildpack.git
+  services:
+    - elastic-apm-service
+  env:
+    JAVA_OPTS: -Delastic.apm.trace_methods="com.bvader.estimator.*#*"
