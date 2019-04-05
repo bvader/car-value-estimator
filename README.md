@@ -23,7 +23,16 @@ example
 `http://localhost:8888/estimateValue?brand=Ferrari&model=GTB&year=2019`
 
 
+## To Deploy to Cloud foundry and Leverage Elastic APM
 
-## To Deploy to Cloud foundry
+See the Cloud Foundry Elastic APM Document
+
+https://github.com/cloudfoundry/java-buildpack/blob/master/docs/framework-elastic_apm_agent.md
+
+Create the user provided service
+
+`cf cups elastic-apm-service -p '{"server_urls":"https://my-apm-server:8200","secret_token":"my-secret-token"}'``
 
 `cf push -f car-value-estimator-manifest.yml`
+
+The front end React application is at: https://github.com/bvader/carfront
