@@ -7,4 +7,4 @@ applications:
   services:
     - elastic-apm-service
   env:
-    JAVA_OPTS: -Delastic.apm.trace_methods="com.bvader.estimator.*#*"
+    JAVA_OPTS: -Delastic.apm.trace_methods="com.bvader.estimator.*"
