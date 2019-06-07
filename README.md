@@ -19,9 +19,27 @@ The `car-value-estimator` service is called using the pattern
 
 If this sevice is called with query parameter brand=Ferrari it will cause a long running estimate.
 
-example
+example  
 `http://localhost:8888/estimateValue?brand=Ferrari&model=GTB&year=2019`
 
+## To start the application with Elastic Java APM Agent
+
+ Build  
+`./mvnw package -Dmaven.test.skip=true`
+
+Get the Elastic Java APM agent  
+`curl -O  https://search.maven.org/remotecontent?filepath=co/elastic/apm/elastic-apm-agent/1.6.1/elastic-apm-agent-1.6.1.jar`
+
+Run cardatabase with APM
+NOTE: `trace_methods` enables method tracing which reports all methods which is not recommended for production
+Unix / Mac OS  
+```shell_session
+java -javaagent:./elastic-apm-agent-1.6.1.jar \
+-Delastic.apm.server_urls="http://localhost:8200" \
+-Delastic.apm.service_name="car-value-estimator" \
+-Delastic.apm.trace_methods="com.bvader.estimator.*" \
+-jar target/car-value-estimator-service-0.1.0.jar
+```
 
 ## To Deploy to Cloud foundry and Leverage Elastic APM
 
