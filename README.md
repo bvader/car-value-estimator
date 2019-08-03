@@ -28,13 +28,13 @@ example
 `./mvnw package -Dmaven.test.skip=true`
 
 Get the Elastic Java APM agent  
-`curl -O  https://search.maven.org/remotecontent?filepath=co/elastic/apm/elastic-apm-agent/1.6.1/elastic-apm-agent-1.6.1.jar`
+`curl -O  https://search.maven.org/remotecontent?filepath=co/elastic/apm/elastic-apm-agent/1.8.0/elastic-apm-agent-1.8.0.jar`
 
 Run cardatabase with APM
 NOTE: `trace_methods` enables method tracing which reports all methods which is not recommended for production
 Unix / Mac OS  
 ```shell_session
-java -javaagent:./elastic-apm-agent-1.6.1.jar \
+java -javaagent:./elastic-apm-agent-1.8.0.jar \
 -Delastic.apm.server_urls="http://localhost:8200" \
 -Delastic.apm.secret_token=“mysecrettoken” \
 -Delastic.apm.service_name="car-value-estimator" \
