@@ -36,7 +36,7 @@ Unix / Mac OS
 ```shell_session
 java -javaagent:./elastic-apm-agent-1.8.0.jar \
 -Delastic.apm.server_urls="http://localhost:8200" \
--Delastic.apm.secret_token=“mysecrettoken” \
+-Delastic.apm.secret_token="mysecrettoken" \
 -Delastic.apm.service_name="car-value-estimator" \
 -Delastic.apm.trace_methods="com.bvader.estimator.*" \
 -jar target/car-value-estimator-service-0.1.0.jar
