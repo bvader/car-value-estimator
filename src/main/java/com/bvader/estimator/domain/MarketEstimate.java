@@ -1,9 +1,12 @@
 package com.bvader.estimator.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MarketEstimate {
 
+    final static Logger logger = LoggerFactory.getLogger(MarketEstimate.class);
     private  int estimate = 0;
     private  String brand;
     private  String model;
@@ -22,32 +25,33 @@ public class MarketEstimate {
         {
             case "Toyota":
                 basePrice = 25000;
-                System.out.println("Toyota");
+                logger.debug("Value Estimation of Model : Toyota");
                 break;
             case "Lexus":
                 basePrice = 35000;
-                System.out.println("Lexus");
+                logger.debug("Value Estimation of Model : Lexus");
                 break;
             case "Ford":
                 basePrice = 20000;
-                System.out.println("Ford");
+                logger.debug("Value Estimation of Model : Ford");
                 break;
             case "Nissan":
                 basePrice = 20000;
-                System.out.println("Nissan");
+                logger.debug("Value Estimation of Model : Nissan");
                 break;
             case "Tesla":
                 basePrice = 60000;
-                System.out.println("Tesla");
+                logger.debug("Value Estimation of Model : Tesla");
                 break;
             case "Ferrari":
                 basePrice = 250000;
                 calculateExoticPrice();
-                System.out.println("Ferrari");
+                logger.debug("Value Estimation of Model : Ferrari");
                 break;
             default:
                 basePrice = 30000;
                 System.out.println("Other");
+                logger.debug("Value Estimation of Model : Other");
         }
 
         int est = (int) ((((Math.random()) - .5) / 10 + 1) * basePrice);

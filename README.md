@@ -6,7 +6,6 @@ To start the application:
 
 `./mvnw spring-boot:run`
 
-
 This Service is used by: https://github.com/bvader/cardatabase
 
 Which is the backend for:
@@ -24,23 +23,9 @@ example
 
 ## To start the application with Elastic Java APM Agent
 
- Build  
-`./mvnw package -Dmaven.test.skip=true`
+Run the build and run script you can change the agent verion if you whish, or add other optiosn. This will start the service expecting all other services and the ELK stack runing on `localhost`
 
-Get the Elastic Java APM agent  
-`curl -O  https://search.maven.org/remotecontent?filepath=co/elastic/apm/elastic-apm-agent/1.8.0/elastic-apm-agent-1.8.0.jar`
-
-Run cardatabase with APM
-NOTE: `trace_methods` enables method tracing which reports all methods which is not recommended for production
-Unix / Mac OS  
-```shell_session
-java -javaagent:./elastic-apm-agent-1.8.0.jar \
--Delastic.apm.server_urls="http://localhost:8200" \
--Delastic.apm.secret_token="mysecrettoken" \
--Delastic.apm.service_name="car-value-estimator" \
--Delastic.apm.trace_methods="com.bvader.estimator.*" \
--jar target/car-value-estimator-service-0.1.0.jar
-```
+`.run-with-agent.sh`
 
 ## To Deploy to Cloud foundry and Leverage Elastic APM
 

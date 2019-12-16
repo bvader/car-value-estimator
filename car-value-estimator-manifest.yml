@@ -1,6 +1,6 @@
 ---
 applications:
-- name: car-value-estimator
+- name: car-value-estimator-apm-test
   memory: 1G
   path: ./target/car-value-estimator-service-0.1.0.jar
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
