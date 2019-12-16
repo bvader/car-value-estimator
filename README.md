@@ -25,7 +25,7 @@ example
 
 Run the build and run script you can change the agent verion if you whish, or add other optiosn. This will start the service expecting all other services and the ELK stack runing on `localhost`
 
-`.run-with-agent.sh`
+`./run-with-agent.sh`
 
 ## To Deploy to Cloud foundry and Leverage Elastic APM
 
