@@ -38,5 +38,3 @@ Create the user provided service
 `cf cups elastic-apm-service -p '{"server_urls":"https://my-apm-server:8200","secret_token":"my-secret-token", "enable_log_correlation":"'true'"}'`
 
 `cf push -f car-value-estimator-manifest.yml`
-
-The front end React application is at: https://github.com/bvader/carfront

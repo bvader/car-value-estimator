@@ -60,6 +60,7 @@ public class MarketEstimate {
 
     private void calculateExoticPrice() {
         // Hmmm lets think about this for a while
+        logger.debug("Exotic car not in database, calculating ...");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
