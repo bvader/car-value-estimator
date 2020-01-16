@@ -50,7 +50,6 @@ public class MarketEstimate {
                 break;
             default:
                 basePrice = 30000;
-                System.out.println("Other");
                 logger.debug("Value Estimation of Model : Other");
         }
 
