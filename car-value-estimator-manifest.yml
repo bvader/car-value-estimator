@@ -3,7 +3,8 @@ applications:
 - name: car-value-estimator
   memory: 1G
   path: ./target/car-value-estimator-service-0.1.0.jar
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack.git
   services:
     - elastic-apm-service
   env:
