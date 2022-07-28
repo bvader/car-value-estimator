@@ -8,4 +8,5 @@ applications:
   services:
     - elastic-apm-service
   env:
-    JAVA_OPTS: -Delastic.apm.trace_methods="com.bvader.estimator.*"
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+    
